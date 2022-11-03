@@ -1,7 +1,11 @@
+{% url 'home' as home_url %}
+{% url 'cities:home' as cities_home_url %}
+{% url 'about' as about_url %}
+
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -10,7 +14,7 @@
 <body>
 <nav class="navbar navbar-expand-lg container " style="background-color: rgba(175,202,255,0.53);">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Навигация</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Find Route</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,13 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
+                    <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">Про нас</a>
+                    <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page" href="{% url 'about' %}">Про нас</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Города</a>
+                    <a class="nav-link {% if request.path == cities_home_url %}active{% endif %}" aria-current="page" href="{% url 'cities:home' %}">Города</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -44,9 +48,10 @@
         </div>
     </div>
 </nav>
-
 {% block body %}
 {% endblock %}
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

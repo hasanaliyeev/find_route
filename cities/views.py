@@ -1,13 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import DetailView
 
 from cities.models import City
 
 __all_ = (
-    'home',
+    'home', 'CityDetailView'
 )
 
 
-def home(request):
+def home(request, pk=None):
+    # if pk:
+    # qs = City.objects.get(id=pk)
+    # qs = City.objects.filter(id=pk).first()
+    # qs = get_object_or_404(City, id=pk)
+    # context = {'object': qs}
+    # return render(request, 'cities/detail.html', context)
+
     qs = City.objects.all()
     context = {'objects_list': qs}
     return render(request, 'cities/home.html', context)
+
+
+class CityDetailView(DetailView):
+    queryset = City.objects.all()
+    template_name = 'cities/detail.html'
