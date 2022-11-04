@@ -1,6 +1,7 @@
 {% url 'home' as home_url %}
 {% url 'cities:home' as cities_home_url %}
 {% url 'about' as about_url %}
+{% url 'cities:create' as create_url %}
 
 <!doctype html>
 <html lang="en">
@@ -29,6 +30,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == cities_home_url %}active{% endif %}" aria-current="page" href="{% url 'cities:home' %}">Города</a>
+                </li>
+                <li class="nav-ite,">
+                    <a class="nav-link {% if request.path == create_url %}active{% endif %}" aria-current="page" href="{% url 'cities:create' %}">Создание Города</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

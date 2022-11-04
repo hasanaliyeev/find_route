@@ -16,7 +16,7 @@ class City(models.Model):
         ordering = ['name']
 
     def get_absolute_url(self):
-        return reverse('cities:detail', kwargs={'pk':self.pk})
+        return reverse('cities:detail', kwargs={'pk': self.pk})
 
 
 class Person(models.Model):

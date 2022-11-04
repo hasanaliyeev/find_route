@@ -5,15 +5,6 @@
 {% block body %}
 <h1>Создание Города</h1>
 
-
-<div class="row">
-    <div class="col-md-4">
-        <form action="" method="post"> {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Сохранить">
-</form>
-    </div>
-</div>
-
+{% include 'form.html' with button='Сохранить' %}
 
 {% endblock %}
