@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block title %}Удалить{% endblock %}
+
+
+{% block body %}
+<h1>Удалить Города</h1>
+<p>{{ object }}</p>
+
+{% include 'form.html' with button='Удалить' %}
+
+{% endblock %}
