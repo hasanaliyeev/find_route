@@ -3,17 +3,19 @@
 
 {% block body %}
 <h1>Список городов</h1>
-<div class="row">
-    <div class="col-md">
-        <p>Город: {{object.name}}</p>
-        <p>{{text}}</p>
-    </div>
-
-    <div class="rov">
+<div class="features">
+    <div class="row">
         <div class="col-md">
+            <p>Город: {{object.name}}</p>
+            <p>{{text}}</p>
+        </div>
+
+        <div class="rov">
+            <div class="col-md">
                 <a href="{% url 'cities:home' %}" class="href">
                     <button type="button" class="btn btn-outline-warning">Назад</button>
                 </a>
+            </div>
         </div>
     </div>
 </div>
