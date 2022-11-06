@@ -9,4 +9,5 @@ urlpatterns = [
     path('add/', CityCreateView.as_view(), name='create'),
     path('update/<int:pk>/', CityUpdateView.as_view(), name='update'),
     path('delete/<int:pk>/', CityDeleteView.as_view(), name='delete'),
+    path('test/', listing, name='test')
 ]
