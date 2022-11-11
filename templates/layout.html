@@ -45,11 +45,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
-                            Dropdown link
+                            Поезда
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://www.google.com/">Google</a></li>
-                            <li><a class="dropdown-item" href="https://dzen.ru/?yredirect=true">Yandex</a></li>
+                            <li><a class="dropdown-item" href="{% url 'trains:home' %}">Список Поездов</a></li>
+                            <li><a class="dropdown-item" href="{% url 'trains:create' %}">Создание Поездов</a></li>
                             <li><a class="dropdown-item" href="https://outlook.live.com/mail/0/">Outlook</a></li>
                             <li><a class="dropdown-item" href="#">Facebook</a></li>
                             <li><a class="dropdown-item" href="#">Instagram</a></li>

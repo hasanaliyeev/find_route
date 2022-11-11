@@ -10,7 +10,7 @@ class Train(models.Model):
     from_city = models.ForeignKey(City, on_delete=models.CASCADE,
                                   related_name='from_city_set',
                                   verbose_name='Из какого города')
-    to_city = models.ForeignKey('cities.City', on_delete=models.CASCADE,
+    to_city = models.ForeignKey(City, on_delete=models.CASCADE,
                                 related_name='to_city_set',
                                 verbose_name='В какой город')
 

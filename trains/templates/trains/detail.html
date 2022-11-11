@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block title %}Train-Detail{% endblock %}
+
+{% block body %}
+
+<div class="features">
+    <div class="row">
+        <div class="col-md">
+            <p>Поезд: {{object.name}}</p>
+            <p>Из город: {{object.from_city}}</p>
+            <p>В город: {{object.to_city}}</p>
+            <p>Время в пути: {{object.travel_time}}</p>
+        </div>
+
+        <div class="rov">
+            <div class="col-md">
+                <a href="{% url 'trains:home' %}" class="href">
+                    <button type="button" class="btn btn-outline-warning">Назад</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+{% endblock %}

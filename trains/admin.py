@@ -1,5 +1,15 @@
 from django.contrib import admin
 
 from trains import models
+from trains.models import Train
 
-admin.site.register(models.Train)
+
+class TrainAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Train
+
+    list_display = ('name', 'from_city', 'to_city', 'travel_time')
+    list_editable = ('travel_time',)
+
+
+admin.site.register(Train, TrainAdmin)

@@ -75,7 +75,6 @@ class CityListView(ListView):
         context['form'] = form
         return context
 
-
 # test function
 def listing(request):
     qs = City.objects.all()

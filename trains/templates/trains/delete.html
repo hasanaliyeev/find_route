@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block title %}Train-Delete{% endblock %}
+
+{% block body %}
+
+<div class="features">
+    <div class="row">
+        <div class="col-md">
+            <p>Поезд: {{object.name}}</p>
+            <p>Из город: {{object.from_city}}</p>
+            <p>В город: {{object.to_city}}</p>
+            <p>Время в пути: {{object.travel_time}}</p>
+        </div>
+    </div>
+
+{% include 'form.html' with button='Удалить' %}
+
+</div>
+
+{% endblock %}
