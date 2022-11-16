@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+from routes.views import find_routes, add_route, save_route
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -22,8 +24,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cities/', include(('cities.urls', 'cities'))),
+    path('accounts/', include(('accounts.urls', 'accounts'))),
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('trains/', include(('trains.urls', 'trains'))),
-    path('routes/', include(('routes.urls', 'routes'))),
+    path('find_routes/', find_routes, name='find_routes'),
+    path('add_route/', add_route, name='add_route'),
+    path('save_route/', save_route, name='save_route'),
+
 ]

@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block title %}Создание Routes{% endblock %}
+
+
+{% block body %}
+<h1>Создание Routes</h1>
+
+{% url 'save_route' as action %}
+{% include 'form.html' with button='Save' action=action %}
+
+{% endblock %}

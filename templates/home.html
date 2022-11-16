@@ -1,5 +1,46 @@
 {% extends 'layout.html' %}
-{% block title %}Main{% endblock %}
+{% block title %}
+Route
+{% endblock %}
+
 {% block body %}
-    <h2>Main Page h2 Block</h2>
+
+{% url 'routes:find_routes' as action %}
+{% include 'form.html' with button='Search' action=action %}
+
+<div class="row">
+    <div class="col-md-8">
+        {% if routes %}
+
+        {% for route in routes %}
+        <h5>Vremya v puti: {{route.total_time}}</h5>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Marsurut iz qoroda {{cities.from_city}} v qorod {{cities.to_city}}</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <br>
+            {% for train in route.trains %}
+
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{train}}</td>
+
+            </tr>
+
+            {% endfor %}
+            </br>
+            </tbody>
+        </table>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{{obj.from_city}}
 {% endblock %}
